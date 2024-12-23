@@ -29,6 +29,7 @@ class Stores extends Model
      * @var array
      */
     protected $fillable = [
+        'enterprise_id',
         'store_name',
         'street',
         'city',

@@ -22,6 +22,7 @@ class StoresRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'enterprise_id' => 'required|exists:enterprises,id',
             'store_name' => 'required|string',
             'street' => 'required|string',
             'city' => 'required|string',

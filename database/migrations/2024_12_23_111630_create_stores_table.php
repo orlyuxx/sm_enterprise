@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('stores', function (Blueprint $table) {
+        Schema::create('stores', function (Blueprint $table) {  
             $table->id('store_id');
+            $table->foreignId('enterprise_id')->constrained('enterprises')->onDelete('cascade');
             $table->string('store_name');
             $table->string('street');
             $table->string('city');
