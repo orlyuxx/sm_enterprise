@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\EnterpriseController;
+use App\Http\Controllers\Api\EnterprisesController;
+use App\Http\Controllers\Api\StoresController;
 
 
 /*
@@ -16,10 +17,18 @@ use App\Http\Controllers\Api\EnterpriseController;
 |
 */
 
-Route::controller(EnterpriseController::class)->group(function () {
-    Route::get('/enterprise',  'index');
-    Route::put('/enterprise/{id}',   'update');
+Route::controller(EnterprisesController::class)->group(function () {
+    Route::get('/enterprises',          'index');
+    Route::put('/enterprises/{id}',     'update');
 });
+
+Route::controller(StoresController::class)->group(function () {
+    Route::get('/stores',               'index');
+    Route::post('/stores',              'store');
+    Route::put('/stores/{id}',          'update');
+    Route::delete('/stores/{id}',       'destroy');
+});
+
 
 
 

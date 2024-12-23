@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Models\Enterprise;
+use App\Models\Enterprises;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\EnterprisesRequest;
 use Illuminate\Http\Request;
 
-class EnterpriseController extends Controller
+class EnterprisesController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return Enterprise::all(); 
+        return Enterprises::all(); 
     }
 
     /**
@@ -56,7 +56,7 @@ class EnterpriseController extends Controller
     {
         $validated = $request->validated();
 
-        $enterprise = Enterprise::findOrFail($id);
+        $enterprise = Enterprises::findOrFail($id);
 
         $enterprise->update($validated);
 
